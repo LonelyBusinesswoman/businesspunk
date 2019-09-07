@@ -90,7 +90,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    touch-action: none;
 }
 p{
     margin-block-start: 0em;
@@ -285,13 +284,13 @@ main{
 }
 section{
     width: 100%;
-    height: 100vh !important;
+    height: 100vh;
     display: block;
     position: relative;
     overflow-y: hidden;
-    // @media (max-width: 905px){
-    //     height: auto !important;
-    // }
+    @media (max-width: 905px){
+        overflow-y: unset;
+    }
         .header{
         width: 65%;
         display: flex;
@@ -619,6 +618,7 @@ header{
         background: url(../img/back_2.jpg) 10% 0%;
         background-size:cover;
     }
+
     .ellips{
         position: absolute;
         bottom: 70%;        
@@ -957,12 +957,18 @@ header{
                             .Bold();
                             font-size:20px;
                             margin-bottom: 8%;
+                            @media (max-width: 400px){
+                                font-size: 24px;
+                            }
                         }
                         span{
                             z-index:4;
                             color:@grey;
                             text-align: right;
                             margin-bottom: 15%; 
+                             @media (max-width: 400px){
+                                font-size: 18px;
+                            }
                         }
                         .price{
                             .Bold();
@@ -970,6 +976,9 @@ header{
                             letter-spacing:0.8px;
                             color:#fff;
                             text-align: right;
+                             @media (max-width: 400px){
+                                font-size: 24px;
+                            }
                         }
                         a{
                             padding-bottom: 2%;
@@ -1260,10 +1269,10 @@ header{
                         width: 75%;
                     }
                     @media (max-width: 600px){
-                        width: 90%;
+                        width: 80%;
                     }
-                    @media (max-width: 450px){
-                        width: 100%;
+                    @media (max-width: 400px){
+                        width: 100%;    
                     }
                     .slick-prev, .slick-next{
                         @media (max-width: 450px){
@@ -1273,11 +1282,9 @@ header{
                         }
                     }
                     .slick-prev:before, .slick-next:before {
-                        @media (max-width: 450px){
-                            font-size:30px;
-                            color: @gold;
-                            opacity:1;
-                        }
+                        font-size:30px;
+                        color: @gold;
+                        opacity:1;
                     }
                     .slick-prev{
                         @media (max-width: 450px){
@@ -1286,7 +1293,7 @@ header{
                     }
                     .slick-next{
                         @media (max-width: 450px){
-                            right: 5%;
+                            right: 2%;
                         }
                     }
                 }
@@ -1363,18 +1370,20 @@ header{
     }
 }
 .eight{
-    @media (max-width: 400px){
-        margin-top: 20%; 
-    }
     .container{
         height: 100%;
         justify-content:space-between;
+        @media (max-width: 400px){
+              justify-content:center; 
+        }
         .content{
             height: 100%;
             display: flex;
             align-items:center;
              @media (max-width: 400px){
-                margin-bottom:0;
+                margin-top:50px;
+                height:auto;
+                margin-bottom: 2%;
             }
             .videos{
                 width: 90%;
@@ -1486,22 +1495,12 @@ header{
     @media (max-width: 905px){
         display: flex;
         flex-direction:column;
-        overflow-y: scroll;
-    }
-    .section_mob{
-        height:100vh !important;
+        overflow-y: unset;
     }
 }
 @media (max-width: 905px) {
     body, html {
-      margin: 0;
-      // overflow-y: scroll;
-      // overflow-x: hidden;
-      // -webkit-overflow-scrolling: touch;
-      // -webkit-transition: none;
-      // -moz-transition: none;
-      // -ms-transition: none;
-      // -o-transition: none;
-      // transition: none;
+        margin: 0;
+        overflow-x: hidden;
     }
 }
